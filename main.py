@@ -4,6 +4,7 @@ from gtts import gTTS
 import tempfile
 import os
 import io
+from PIL import Image
 
 #Sidebar
 st.sidebar.title("About")
@@ -15,20 +16,25 @@ st.sidebar.info(
 st.title("Grocery List App")
 st.write("Add grocery items along with their quantities (in kg) to your list and search for them.")
 
+#Image
+image = Image.open('logo-removebg-preview.png')
+st.image(image)
+
+
 #dictionary initialisation
 grocery_dict = st.session_state.get("grocery_dict", {})
 
 #Input
 new_item = st.text_input("Add a grocery item:")
 quantity = st.number_input("Quantity (in kg):", min_value=0.01, step=0.01, format="%.2f", value=0.01)
-if st.button("Add"):
+if st.button("Add", key="add_button", help="Add the grocery item to the list"):
     if new_item.strip():
         item_number = len(grocery_dict) + 1
         grocery_dict[item_number] = {"Item": new_item, "Quantity": f"{quantity} kg"}
         st.success(f"'{new_item}' (Quantity: {quantity} kg) added to the list.")
 
 #pop button
-if st.button("Pop Last Item"):
+if st.button("Pop Last Item", help="Remove the last item from the list"):
     if grocery_dict:
         last_item_number = max(grocery_dict.keys())
         popped_item = grocery_dict.pop(last_item_number)
@@ -58,12 +64,12 @@ if not df.empty:
     st.dataframe(df.style.hide_index())  # Use st.dataframe instead of st.write to display it in tabular format
 
 #clear button
-if st.button("Clear List"):
+if st.button("Clear List", help="Clear the grocery list"):
     grocery_dict.clear()
     st.success("Grocery list cleared.")
 
 #reset button
-if st.button("Reset Search"):
+if st.button("Reset Search", help="Reset the search"):
     search_term = ""
     st.text_input("Search for a grocery item:", value="")
 
@@ -104,7 +110,7 @@ if st.button("Convert to Speech"):
         st.warning("Please enter some text to convert to speech.")
 
 #excel
-if st.button("Export to Excel"):
+if st.button("Export to Excel", help="Export the grocery list to an Excel file"):
     if grocery_dict:
         export_df = pd.DataFrame(grocery_dict).T.reset_index(drop=True)
 
