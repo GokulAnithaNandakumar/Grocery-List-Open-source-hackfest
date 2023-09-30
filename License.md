@@ -1,3 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
+  <!-- Apache Feather -->
+  <path d="M50 6C29.3 6 13 21.4 13 41.6V78l19.6-13.1H50c20.7 0 37-15.4 37-35.6S70.7 6 50 6zm0 8c13.3 0 24 10.6 24 23.6S63.3 61.2 50 61.2 26 50.6 26 37.6 36.7 14 50 14z" fill="#black"/>
+  <!-- Apache License 2.0 Text -->
+  <text x="5" y="95" font-family="Arial" font-size="8" fill="#black">Licensed under Apache License 2.0</text>
+</svg>
+
 Apache License
 Version 2.0, January 2004
 http://www.apache.org/licenses/
