@@ -1,6 +1,6 @@
 # Grocery List App
 
-The Grocery List App is a simple Streamlit web application for managing a grocery list with quantities in kilograms (kg). It allows users to add grocery items, search for items, clear the list, pop the last item, and export the list to an Excel file.
+The Grocery List App is a simple Streamlit web application for managing a grocery list with quantities in kilograms (kg). It allows users to add grocery items, search for items, clear the list, pop the last item, convert text to speech and export the list to an Excel file.
 
 ![Grocery List App](logo-removebg-preview.png)
 
