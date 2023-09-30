@@ -10,6 +10,7 @@ The Grocery List App is a simple Streamlit web application for managing a grocer
 - Search for items within the list.
 - Remove the last item added (pop).
 - Clear the entire grocery list.
+- Convert the text to speech to increase the accessibility of the user.
 - Export the grocery list to an Excel file.
 
 ## Usage
